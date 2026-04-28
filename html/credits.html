@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits - Hangman Pro</title>
+    <link rel="icon" type="image/jpeg" href="../hangman-game-images/images/head.jpg">
+    <link rel="stylesheet" href="../css/credits.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <span class="logo-icon">M</span>
+                <span class="logo-text">Hangman MTK<span></span></span>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">Credits ▼</button>
+
+            <nav class="header-nav" id="headerNav">
+                <a href="website.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="faq.html">FAQ</a>
+                <a href="credits.html" class="active">Credits</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="welcome-container">
+        <section class="hero-section">
+            <h1 class="game-title">Credits</h1>
+            <p class="game-subtitle">The people and resources behind Hangman MTK.</p>
+        </section>
+
+        <main class="welcome-main">
+            <section class="info-section developer-section">
+                <h2 class="section-title">Lead Developer</h2>
+                <div class="developer-content">
+                    <div class="developer-info">
+                        <h3>Kyaw Lin Myint</h3>
+                        <p class="university">Edinburgh Napier University - Online BSc Course</p>
+                        <p class="developer-bio">Developed as a web project, building upon the tutorial foundation while adding unique features like the streak system and statistics tracking. Demonstrates proficiency in HTML, CSS, JavaScript, and localStorage.</p>
+                        
+                        <h4 style="margin: 25px 0 10px; color: #fff; font-size: 18px;">Core Contributions:</h4>
+                        <ul style="color: var(--text-dim); margin-left: 20px; line-height: 1.8;">
+                            <li>Architected and implemented the Streak System and Statistics Tracker</li>
+                            <li>Designed and integrated the "Free Letter" power-up mechanic</li>
+                            <li>Developed the dual-input (physical & on-screen) keyboard system</li>
+                            <li>Created the responsive and modern user interface</li>
+                        </ul>
+                        
+                        <p class="developer-contact" style="margin-top: 30px;">📧 kyawlinmyint627@gmail.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section credit-section">
+                <h2 class="section-title">Engineering Credits</h2>
+                <div class="section-content">
+                    <p>Core logic and architectural foundation established via:</p>
+                    <a href="https://youtu.be/hSSdc8vKP1I?list=PLpwngcHZlPadAbdD_sFE_moH6RjgaTFCw" class="credit-link" target="_blank">
+                        Build A Hangman Game Tutorial
+                    </a>
+                    <p class="credit-note">The tutorial provided the foundation for the game mechanics, design inspiration, and core implementation, which was then heavily expanded upon with original features and a custom design system.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Kyaw Lin Myint - Edinburgh Napier University BSc (Online)</p>
+                <p class="version">Complete Hangman Game with Streaks, Power-ups & Statistics</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const headerNav = document.getElementById('headerNav');
+
+            if (mobileMenuBtn && headerNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    // Toggle the show class which triggers the CSS max-height transition
+                    headerNav.classList.toggle('show');
+                    
+                    // Toggle the visual arrow direction specifically for the Credits page
+                    if (headerNav.classList.contains('show')) {
+                        mobileMenuBtn.innerHTML = 'Credits ▲';
+                        // Optional: Add aria-expanded for better accessibility
+                        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        mobileMenuBtn.innerHTML = 'Credits ▼';
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hangman Pro</title>
+    <link rel="icon" type="image/jpeg" href="../hangman-game-images/images/head.jpg">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                 <span class="logo-icon">M</span>
+                <span class="logo-text">Hangman MTK<span></span></span>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">About ▼</button>
+
+             <nav class="header-nav" id="headerNav">
+                <a href="website.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="features.html">Features</a>
+                 <a href="faq.html">FAQ</a>
+                <a href="credits.html">Credits</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="welcome-container">
+        <section class="hero-section">
+            <h1 class="game-title">About The Game</h1>
+            <p class="game-subtitle">The story behind Hangman MTK.</p>
+        </section>
+
+        <main class="welcome-main">
+            <section class="info-section">
+                <h2 class="section-title">The Challenge</h2>
+                <div class="section-content">
+                    <p>Welcome to the Hangman Game – an interactive and engaging word guessing adventure! Uncover hidden words before the hangman is fully drawn. It's a classic game of deduction, vocabulary, and a little bit of luck, redesigned for a modern experience.</p>
+                    <p style="margin-top: 20px; color: var(--text-dim);">Each round presents you with a hidden word from one of seven exciting categories. Guess letters one by one, but be careful – each wrong guess brings the hangman closer to completion. Can you solve the word before it's too late?</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Kyaw Lin Myint - Edinburgh Napier University BSc (Online)</p>
+                <p class="version">Complete Hangman Game with Streaks, Power-ups & Statistics</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const headerNav = document.getElementById('headerNav');
+
+            if (mobileMenuBtn && headerNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    // Toggle the show class which triggers the CSS max-height transition
+                    headerNav.classList.toggle('show');
+                    
+                    // Toggle the visual arrow direction specifically for the About page
+                    if (headerNav.classList.contains('show')) {
+                        mobileMenuBtn.innerHTML = 'About ▲';
+                        // Optional: Add aria-expanded for better accessibility
+                        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        mobileMenuBtn.innerHTML = 'About ▼';
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

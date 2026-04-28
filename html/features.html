@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Hangman Pro</title>
+    <link rel="icon" type="image/jpeg" href="../hangman-game-images/images/head.jpg">
+    <link rel="stylesheet" href="../css/features.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                 <span class="logo-icon">M</span>
+                <span class="logo-text">Hangman MTK<span></span></span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">Features ▼</button>
+
+            <nav class="header-nav" id="headerNav">
+                <a href="website.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html" class="active">Features</a>
+                 <a href="faq.html" >FAQ</a>
+                <a href="credits.html">Credits</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="welcome-container">
+        <section class="hero-section">
+            <h1 class="game-title">Game Features</h1>
+            <p class="game-subtitle">Everything you need for the ultimate word challenge.</p>
+        </section>
+
+        <main class="welcome-main">
+            <section class="info-section">
+                <h2 class="section-title">Complete Feature List</h2>
+                <div class="features-grid-detailed">
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">🎨</span>
+                        <h3>Hangman Drawing</h3>
+                        <p>Watch the gallows fill with each incorrect guess. The visual progress adds tension and excitement to every round, with a classic stick figure drawing that appears limb by limb.</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">⌨️</span>
+                        <h3>Dual Keyboard Input</h3>
+                        <p>Play your way. Use your physical keyboard for speed or click the on-screen keyboard for a tactile, mouse-friendly experience. Both are fully supported and synchronized.</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">⏱️</span>
+                        <h3>Real-time Timer</h3>
+                        <p>Challenge yourself to think fast. A live timer tracks how quickly you solve each word, allowing you to compete against your own personal best times.</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">🔥</span>
+                        <h3>Streak System</h3>
+                        <p>Correctly guess words in a row to build a streak. Higher streaks unlock bonus points and provide a satisfying sense of momentum. Don't let a wrong guess break your flow!</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">🎁</span>
+                        <h3>Free Letter Power-ups</h3>
+                        <p>Stuck on a word? Earn or unlock power-ups that can reveal a random correct letter in the puzzle, giving you a helpful nudge in the right direction.</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">📊</span>
+                        <h3>Detailed Statistics</h3>
+                        <p>Track your journey. The game logs your total games played, wins, losses, current streak, longest streak, and total letters guessed. See your improvement over time.</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">⚙️</span>
+                        <h3>Custom Settings</h3>
+                        <p>Personalize your experience. Toggle background music and sound effects on or off, and choose from a selection of visual themes to match your style.</p>
+                    </div>
+                    <div class="feature-card-detailed">
+                        <span class="feature-icon">🏆</span>
+                        <h3>Achievement System</h3>
+                        <p>Go beyond just winning. Unlock special achievements for hitting milestones, like winning your first game, reaching a 10-win streak, or using your first power-up.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Kyaw Lin Myint - Edinburgh Napier University BSc (Online)</p>
+                <p class="version">Complete Hangman Game with Streaks, Power-ups & Statistics</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const headerNav = document.getElementById('headerNav');
+
+            if (mobileMenuBtn && headerNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    // Toggle the show class which triggers the CSS max-height transition
+                    headerNav.classList.toggle('show');
+                    
+                    // Toggle the visual arrow direction specifically for the Features page
+                    if (headerNav.classList.contains('show')) {
+                        mobileMenuBtn.innerHTML = 'Features ▲';
+                        // Optional: Add aria-expanded for better accessibility
+                        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        mobileMenuBtn.innerHTML = 'Features ▼';
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

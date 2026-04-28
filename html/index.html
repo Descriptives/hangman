@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game - Home</title>
+    <link rel="icon" type="image/jpeg" href="../hangman-game-images/images/head.jpg">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body class="home-body">
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Game...</div>
+    </div>
+
+    <div class="home-container">
+        <h1 class="home-title">HANGMAN</h1>
+        <p class="home-subtitle">Guess the word before it's too late!</p>
+        
+        <div class="home-stats" id="homeStats"></div>
+        
+        <div class="action-column">
+            <button class="action-btn start-btn" id="startGameBtn">
+                <span class="btn-icon">▶️</span>
+                <span class="btn-text">START GAME</span>
+                <div class="loader"></div>
+            </button>
+            
+            <button class="action-btn settings-btn" id="settingsBtn">
+                <span class="btn-icon">⚙️</span>
+                <span class="btn-text">SETTINGS</span>
+            </button>
+            
+            <button class="action-btn quit-btn" id="quitBtn">
+                <span class="btn-icon">🚪</span>
+                <span class="btn-text">QUIT</span>
+            </button>
+        </div>
+        
+        <div class="secondary-links">
+            <a href="howtoplay.html" class="secondary-link">📖 How to Play</a>
+            <span class="link-separator">|</span>
+            <a href="stats.html" class="secondary-link">📊 My Statistics</a>
+        </div>
+        
+        <p class="home-footer">Press <span class="key-hint">ENTER</span> to start</p>
+    </div>
+
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>⚙️ SETTINGS</h2>
+                <button class="modal-close" id="closeSettingsModal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <h4>Audio</h4>
+                <div class="music-controls">
+                    <button id="musicToggleBtn" class="icon-btn">🔊</button>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3">
+                </div>
+                <hr>
+                <h4>Background</h4>
+                <div class="bg-options">
+                    <button class="bg-btn" data-bg="url('../hangman-game-images/images/cityBackground.jpg')">City</button>
+                    <button class="bg-btn" data-bg="url('../hangman-game-images/images/cloud.jpg')">Cloud</button>
+                    <button class="bg-btn" data-bg="url('../hangman-game-images/images/galaxy.webp')">Galaxy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop autoplay>
+        <source src="../music/digicraft1-orchestral-peace-317679.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="../js/index.js"></script>
+</body>
+</html>

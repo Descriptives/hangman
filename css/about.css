@@ -1,0 +1,156 @@
+/* about.css */
+@import url('website.css');
+
+/* --- Original Developer Info Styles --- */
+.developer-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.developer-info li {
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 16px;
+}
+
+.developer-info li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 18px;
+}
+
+.developer-info h4 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.credit-section {
+    margin-top: 20px;
+}
+
+/* Desktop Active Navigation State */
+.header-nav a.active {
+    color: var(--text-main);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 4px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Mobile Menu Toggle Button (Hidden on Desktop) */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    opacity: 0.8;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between;
+    }
+
+    .mobile-menu-btn {
+        display: block; 
+    }
+
+    .header-nav {
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        margin-top: 10px;
+        gap: 0;
+        
+        /* White Div Container Styling */
+        background-color: #ffffff;
+        border-radius: 12px; 
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); 
+        
+        /* Smooth Dropdown Animation Properties */
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        padding: 0; 
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+
+    /* Triggered via JavaScript */
+    .header-nav.show {
+        max-height: 400px; 
+        opacity: 1;
+        margin-top: 15px;
+        padding: 10px 0; 
+    }
+
+    .header-nav a {
+        display: block; 
+        width: 100%;
+        box-sizing: border-box; 
+        padding: 14px 20px; 
+        text-align: center; 
+        
+        color: #333333 !important; 
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04); 
+        transition: all 0.3s ease; 
+    }
+
+    /* Modern Hover Effect Inside Dropdown */
+    .header-nav a:hover, 
+    .header-nav a:active {
+        background-color: #f0f4f8; 
+        color: #0056b3 !important; 
+        letter-spacing: 0.5px; 
+    }
+
+    /* Mobile Active State Fix - Ensures "About" looks selected */
+    .header-nav a.active {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        background-color: #f0f4f8; 
+        color: #0056b3 !important; 
+        font-weight: 700;
+    }
+
+    .header-nav a:last-child {
+        border-bottom: none;
+    }
+}

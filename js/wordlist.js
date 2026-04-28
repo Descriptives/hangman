@@ -1,0 +1,85 @@
+const wordList = [
+    // Programming
+    { word: "python", hint: "A popular programming language known for its simplicity.", category: "programming" },
+    { word: "javascript", hint: "The primary language used for web development.", category: "programming" },
+    { word: "database", hint: "An organized collection of structured information.", category: "programming" },
+    { word: "compiler", hint: "Translates code into a language the computer understands.", category: "programming" },
+    { word: "algorithm", hint: "A step-by-step procedure for solving a problem.", category: "programming" },
+    { word: "variable", hint: "A container for storing data values.", category: "programming" },
+    { word: "frontend", hint: "The part of a website that users interact with.", category: "programming" },
+    { word: "backend", hint: "The server-side part of a web application.", category: "programming" },
+    { word: "debugging", hint: "The process of finding and fixing errors in code.", category: "programming" },
+    { word: "framework", hint: "A platform for developing software applications.", category: "programming" },
+
+    // Sports
+    { word: "basketball", hint: "A sport where teams shoot a ball through a hoop.", category: "sports" },
+    { word: "football", hint: "Known as soccer in some countries; played with a round ball.", category: "sports" },
+    { word: "baseball", hint: "A game played with a bat, ball, and gloves on a diamond.", category: "sports" },
+    { word: "swimming", hint: "Moving through water using limbs.", category: "sports" },
+    { word: "cricket", hint: "A bat-and-ball game played with eleven players and wickets.", category: "sports" },
+    { word: "tennis", hint: "Played with rackets and a yellow ball over a net.", category: "sports" },
+    { word: "volleyball", hint: "Teams hit a ball over a high net with their hands.", category: "sports" },
+    { word: "badminton", hint: "A racket sport played with a shuttlecock.", category: "sports" },
+    { word: "gymnastics", hint: "Exercises involving physical agility and coordination.", category: "sports" },
+    { word: "marathon", hint: "A long-distance running race.", category: "sports" },
+
+    // Food
+    { word: "pizza", hint: "Italian dish with a dough base and various toppings.", category: "food" },
+    { word: "hamburger", hint: "A beef patty served inside a sliced bun.", category: "food" },
+    { word: "spaghetti", hint: "Long, thin, cylindrical pasta of Italian origin.", category: "food" },
+    { word: "sushi", hint: "Japanese dish of prepared vinegared rice and raw fish.", category: "food" },
+    { word: "chocolate", hint: "A sweet food made from roasted cacao seeds.", category: "food" },
+    { word: "sandwich", hint: "Food typically consisting of vegetables or meat between bread.", category: "food" },
+    { word: "pancake", hint: "A flat cake, often thin and round, cooked in a pan.", category: "food" },
+    { word: "burrito", hint: "A Mexican dish consisting of a flour tortilla rolled around a filling.", category: "food" },
+    { word: "icecream", hint: "A sweetened frozen food typically eaten as a snack or dessert.", category: "food" },
+    { word: "lasagna", hint: "Wide, flat pasta sheets layered with sauce and cheese.", category: "food" },
+
+    // History
+    { word: "pyramid", hint: "Ancient triangular stone structures in Egypt.", category: "history" },
+    { word: "renaissance", hint: "The period of European cultural and artistic rebirth.", category: "history" },
+    { word: "pharaoh", hint: "A ruler in ancient Egypt.", category: "history" },
+    { word: "medieval", hint: "Relating to the Middle Ages.", category: "history" },
+    { word: "gladiator", hint: "An armed combatant who entertained audiences in Rome.", category: "history" },
+    { word: "emperor", hint: "The sovereign ruler of an empire.", category: "history" },
+    { word: "colony", hint: "A country or area under the political control of another.", category: "history" },
+    { word: "knights", hint: "Soldiers in armor who served a lord in the Middle Ages.", category: "history" },
+    { word: "viking", hint: "Scandinavian seafaring warriors.", category: "history" },
+    { word: "revolution", hint: "A forcible overthrow of a government or social order.", category: "history" },
+
+    // Science
+    { word: "oxygen", hint: "A gas that is essential for human life.", category: "science" },
+    { word: "gravity", hint: "The force that attracts a body toward the center of the earth.", category: "science" },
+    { word: "molecule", hint: "A group of atoms bonded together.", category: "science" },
+    { word: "telescope", hint: "An instrument used to see objects far away in space.", category: "science" },
+    { word: "microscope", hint: "Used to see objects too small for the naked eye.", category: "science" },
+    { word: "evolution", hint: "The process of change in living things over generations.", category: "science" },
+    { word: "asteroid", hint: "A small rocky body orbiting the sun.", category: "science" },
+    { word: "bacteria", hint: "Microscopic single-celled organisms.", category: "science" },
+    { word: "chemical", hint: "Relating to chemistry or the interactions of substances.", category: "science" },
+    { word: "physics", hint: "The study of matter, energy, and the laws of nature.", category: "science" },
+
+    // Countries
+    { word: "japan", hint: "An island nation in East Asia known for technology.", category: "countries" },
+    { word: "brazil", hint: "The largest country in South America.", category: "countries" },
+    { word: "canada", hint: "A North American country known for maple syrup.", category: "countries" },
+    { word: "germany", hint: "A European country famous for its automotive industry.", category: "countries" },
+    { word: "australia", hint: "A country and continent surrounded by the Indian and Pacific oceans.", category: "countries" },
+    { word: "france", hint: "Known for the Eiffel Tower and fine cuisine.", category: "countries" },
+    { word: "mexico", hint: "A country in North America known for its rich history and tacos.", category: "countries" },
+    { word: "italy", hint: "A European country shaped like a boot.", category: "countries" },
+    { word: "india", hint: "A South Asian country famous for its diverse culture and spices.", category: "countries" },
+    { word: "egypt", hint: "A country in North Africa famous for its ancient pyramids.", category: "countries" },
+
+    // Animal
+    { word: "elephant", hint: "The largest land animal, known for its trunk.", category: "animal" },
+    { word: "kangaroo", hint: "A hopping marsupial from Australia.", category: "animal" },
+    { word: "dolphin", hint: "A highly intelligent marine mammal.", category: "animal" },
+    { word: "penguin", hint: "A flightless bird that lives in cold climates.", category: "animal" },
+    { word: "giraffe", hint: "An animal with a very long neck and spots.", category: "animal" },
+    { word: "tiger", hint: "A large cat with orange fur and black stripes.", category: "animal" },
+    { word: "octopus", hint: "A sea creature with eight arms.", category: "animal" },
+    { word: "hamster", hint: "A small rodent often kept as a pet.", category: "animal" },
+    { word: "gorilla", hint: "The largest type of primate.", category: "animal" },
+    { word: "butterfly", hint: "An insect with colorful wings that starts as a caterpillar.", category: "animal" }
+];

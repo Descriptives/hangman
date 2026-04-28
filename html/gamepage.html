@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="icon" type="image/jpeg" href="../hangman-game-images/images/head.jpg">
+    <link rel="stylesheet" href="../css/gamepage.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="back-btn" id="homeBtn">← Home</button>
+            <button class="refresh-btn" id="refreshBtn">↻</button>
+        </div>
+        <div class="nav-right">
+            <span class="category-label">Category:</span>
+            <select id="categorySelect" class="category-dropdown">
+                <option value="all">Random All</option>
+                <option value="sports">Sports</option>
+                <option value="food">Food</option>
+                <option value="programming">Programming</option>
+                <option value="history">History</option>
+                <option value="science">Science</option>
+                <option value="countries">Countries</option>
+                <option value="animal">Animals</option>
+            </select>
+            <button id="settingsBtn" class="settings-btn">⚙️</button>
+        </div>
+    </nav>
+
+    <!-- Settings Menu -->
+    <div id="settingsMenu" class="settings-menu" style="display: none;">
+        <h4>Audio</h4>
+        <div class="music-controls">
+            <button id="musicToggleBtn" class="icon-btn">🔇</button>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3">
+        </div>
+        <hr>
+        <h4>Background</h4>
+        <div class="bg-options">
+            <button class="bg-btn" data-bg="url('../hangman-game-images/images/cityBackground.jpg')">City</button>
+            <button class="bg-btn" data-bg="url('../hangman-game-images/images/cloud.jpg')">Cloud</button>
+            <button class="bg-btn" data-bg="url('../hangman-game-images/images/galaxy.webp')">Galaxy</button>
+        </div>
+    </div>
+    
+    <!-- Main Game Container -->
+    <div class="container">
+        <!-- Left Side - Hangman Image -->
+        <div class="hangman-img">
+            <img src="../hangman-game-images/images/hangman-0.svg" alt="hangman" id="hangman-image">
+            <h1>HANGMAN GAME</h1>
+            <div class="word-counter">
+                <span>Word <span id="currentWordNum">1</span>/<span id="totalWords">70</span></span>
+            </div>
+        </div>
+
+        <!-- Right Side - Game Box -->
+        <div class="box">
+            <!-- Word Display -->
+            <ul class="word"></ul>
+
+            <!-- Hint -->
+            <h3 class="hint">
+                Hint: <b id="hintText"></b>
+            </h3>
+
+            <!-- Game Info Bar -->
+            <div class="game-info-bar">
+                <div class="info-item">
+                    <span>Guessed:</span>
+                    <span class="info-value" id="guessedCount">0</span>
+                </div>
+                <div class="info-item">
+                    <span>Remaining:</span>
+                    <span class="info-value" id="remainingCount">0</span>
+                </div>
+                <div class="info-item">
+                    <span>Time:</span>
+                    <span class="info-value" id="timerDisplay">00:00</span>
+                </div>
+            </div>
+
+            <!-- Miss Counter and Free Letter Button -->
+            <div class="miss-section">
+                <h3 class="guess">Miss: <b id="missCount">0 / 6</b></h3>
+                <button id="freeLetterBtn" class="gift-btn">Free Letter (<span id="freeLetterCount">3</span>)</button>
+            </div>
+
+            <!-- Keyboard -->
+            <div class="keyboard" id="keyboard"></div>
+        </div>
+    </div>
+
+    <div class="stats-dashboard">
+        <!-- Player Stats Card -->
+        <div class="stat-card player-stats">
+            <h3>📊 Player Stats</h3>
+            <div class="stat-items">
+                <div class="stat-row">
+                    <span class="stat-label">Current Streak:</span>
+                    <span class="stat-value" id="dashboardStreak">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Free Letters:</span>
+                    <span class="stat-value" id="dashboardFreeLetters">3</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Best Streak:</span>
+                    <span class="stat-value" id="dashboardBestStreak">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links Card -->
+        <div class="stat-card quick-links">
+            <h3>⚡ Quick Links</h3>
+            <div class="links-list">
+                <button class="quick-link" onclick="window.location.href='index.html'">🏠 Home</button>
+                <button class="quick-link" id="howToPlayBtn">📖 How to Play</button>
+                <button class="quick-link" id="statsBtn">📈 Statistics</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Game Over Modal -->
+    <div class="content" id="gameOverModal" style="display: none;">
+        <div class="lose">
+            <img src="../hangman-game-images/images/lost.gif" alt="game over" id="result-image">
+            <h3 id="result-message">Game Over!</h3>
+            <div id="streakMessage"></div>
+            <button class="play-again" id="playAgainBtn">Play Again</button>
+            <button class="back-from-game-btn" id="backFromGameBtn">🏠 Home</button>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="../music/digicraft1-orchestral-peace-317679.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="../js/wordlist.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

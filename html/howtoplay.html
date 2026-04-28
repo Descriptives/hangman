@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play - Hangman</title>
+    <link rel="icon" type="image/jpeg" href="../hangman-game-images/images/head.jpg">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .howto-container {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: slideUp 0.5s ease;
+        }
+
+        .howto-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .howto-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .howto-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .howto-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .howto-section li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .howto-section li::before {
+            content: "•";
+            color: #ffd700;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        .tip-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .nav-button {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            background: #ffd700;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        .nav-button.primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="home-body">
+    <div class="howto-container">
+        <h1 class="howto-title">📖 HOW TO PLAY</h1>
+        
+        <div class="howto-section">
+            <h3>🎯 Objective</h3>
+            <p>Guess the hidden word before the hangman is fully drawn. You have 6 wrong guesses maximum!</p>
+        </div>
+
+        <div class="howto-section">
+            <h3>⌨️ How to Play</h3>
+            <ul>
+                <li>Click on the letters or use your keyboard to guess</li>
+                <li>Each correct letter fills in the blanks</li>
+                <li>Each wrong guess adds a part to the hangman</li>
+                <li>Complete the word before 6 wrong guesses to win!</li>
+            </ul>
+        </div>
+
+        <div class="howto-section">
+            <h3>🎁 Free Letters</h3>
+            <ul>
+                <li>Start with 3 free letters</li>
+                <li>Win games to earn more free letters</li>
+                <li>Use free letters to reveal a random correct letter</li>
+                <li>Build streaks for bonus rewards!</li>
+            </ul>
+        </div>
+
+        <div class="howto-section">
+            <h3>🔥 Streak System</h3>
+            <ul>
+                <li>Win consecutively to build your streak</li>
+                <li>3-streak: +2 free letters</li>
+                <li>5-streak: +3 free letters</li>
+                <li>10-streak: +4 free letters</li>
+                <li>Perfect game (0 wrong): Extra bonus!</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>💡 Pro Tip:</strong> Use your free letters wisely on longer words!
+        </div>
+
+        <div class="button-group">
+            <a href="index.html" class="nav-button">← Home</a>
+            <a href="gamepage.html" class="nav-button primary">Play Now →</a>
+        </div>
+    </div>
+</body>
+</html>
