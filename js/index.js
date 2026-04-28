@@ -35,7 +35,7 @@ function startGame() {
 
 // Quit to website
 function quitToWebsite() {
-    window.location.href = 'website.html';
+    window.location.href = '../index.html';
 }
 
 // Settings functionality
